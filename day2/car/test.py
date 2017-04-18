@@ -22,7 +22,7 @@ class CarClassTest(TestCase):
     def test_car_properties(self):
         toyota = Car('Toyota', 'Corolla')
         self.assertListEqual(['Toyota', 'Corolla'],
-                             [toyota.type, toyota.model],
+                             [toyota.name, toyota.model],
                              msg='The car name and model should be a property of the car')
 
     def test_car_doors(self):
