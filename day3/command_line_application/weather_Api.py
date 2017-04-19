@@ -12,13 +12,12 @@ def weather(city_name=None):
 	url='http://api.openweathermap.org/data/2.5/weather?q='
 	
 	data = urllib.urlopen(url+city_name+'&APPID='+api_key)
+	print('This is the Weather for {}'.format(city_name))
 	print (data.read())
 
 def main():
-	if len(sys.argv) > 1:
-		weather(sys.argv[1])
-	else:
-		weather()
+	city = raw_input("Please Enter the  CityName that u want to know its Weather:  ")
+	weather(city)
+		
 if __name__=='__main__':
 	main()
-	
