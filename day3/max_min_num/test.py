@@ -1,4 +1,5 @@
-Your answer should be returned in an array containing the min and max number, respectively.
+from unittest import TestCase
+from max_min_num import find_max_min
 class MaxMinTest(TestCase):
     """docstring for MaxMinTest"""
     def test_find_max_min_four(self):

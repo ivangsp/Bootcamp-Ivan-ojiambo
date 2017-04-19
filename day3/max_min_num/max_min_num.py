@@ -12,4 +12,3 @@ def find_max_min(x):
             min_max.append(min)
             min_max.append(max)
             return min_max
-1 Comment Collapse
