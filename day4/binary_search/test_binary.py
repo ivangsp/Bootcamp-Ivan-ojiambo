@@ -106,7 +106,7 @@ class BinarySearchTest(TestCase):
             msg='should return {count: 4, index: 7} for 16'
         )
         self.assertEqual(
-            5,
+            0,
             search2['count'],
             msg='should return {count: 0, index: 19} for 40'
         )

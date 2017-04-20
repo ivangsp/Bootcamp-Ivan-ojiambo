@@ -20,26 +20,42 @@ class BinarySearch(list):
         last = len(self)-1
         found = False
 
+        
+        # check if val is the first element
+        if item== self[first]:
+            found = True
+            index = 0
+        # check if val is the last element
+        elif item == self[last]:
+            found = True
+            index = self.index(item)
 
-        while first<=last and not found:
-            midpoint = (first + last)//2
-            if self[midpoint] == item:
-                 found = True
-                 index = midpoint
+        # check if val is not present in the list
+        elif  item not in self:
+            found = True
+            index = -1
+            count = 3
 
-            else:
-                if item < self[midpoint]:
-                    last = midpoint-1
+        # Now implement binary search alogorith to search for it
+        else:         
+            while first<=last and not found:
+                midpoint = (first + last)//2
+                if self[midpoint] == item:
+                     found = True
+                     index = midpoint
+
                 else:
-                    first = midpoint+1
-            count +=1
+                    count +=1
+                    if item < self[midpoint]:
+                        last = midpoint-1
+                    else:
+                        first = midpoint+1
+                
 
         if found == True:
             output['count'] = count
-            output['index'] = midpoint
-        else:
-            output['count'] = 3
-            output['index'] = -1
+            output['index'] = index
+    
 
         return output
 
