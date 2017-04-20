@@ -120,26 +120,51 @@ body{
 	background-color: #FFFFFF;
 	color: #5A5A5A;
 }
+#news1-container{
+	float: left;
+	width: 60%
+}
 .header{
 	color: #1167A8;
 	font-weight: bold;
 }
 #headlineimg{
-	float: left;
+	float: right;
+	margin-top: -70px;
+
 }
-#news{
+.news1{
 	width: 280px;
 	position: relative;
 	left: 10px;
 	top:0px;
 	float: left;
 	font-size: 1.0em;
+
+}
+#news{
+	width: 37%;
+	right 20px;
+	position: relative;
+	left: 10px;
+	top:0px;
+	float: right;
+	font-size: 1.0em;
+}
+#news h5{
+	text-decoration: underline;
+	color: #505050
 }
 #news a{
 	text-decoration: none;
 	line-height: 1.2em;
 	color: #3D67A8;
 
+}
+
+#videos h4{
+	position: relative;
+	top: -30
 }
 #news a:hover{
 	text-decoration: underline;
