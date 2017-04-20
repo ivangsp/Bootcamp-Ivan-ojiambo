@@ -7,6 +7,8 @@ class Test_Prime(unittest.TestCase):
 		self.result1 = prime_numbers.generate_prime_num(1)
 		self.result2 = prime_numbers.generate_prime_num(5)
 		self.result3 = prime_numbers.generate_prime_num(10)
+		self.result4 = prime_numbers.generate_prime_num(21)
+
 
 	#check if it raises TypeError when input is not an ineteger
 	def test_if_raises_TypeError_when_non_int_passed_parameters(self):
@@ -18,13 +20,18 @@ class Test_Prime(unittest.TestCase):
 
 	# #Testing to see if it returns 1 0r 0 as a prime number
 	def test_output_result1(self):
-		self.assertEqual(self.result1, [0,1], msg="Invalid output")
+		self.assertNotEqual(self.result1, [0,1], msg="Invalid output")
 
 	# 	#testing to see if it returns an even number as part of the prime numbers
 	def test_output_result2(self):
-		self.assertEqual(self.result2, [2,3,4,5], msg="Invalid output")
+		self.assertNotEqual(self.result2, [2,3,4,5], msg="Invalid output")
 
 	# #testing to see if it returns 9 as a prime number
 	def test_output_result3(self):
-		self.assertEqual(self.result3, [2,3,5,7,9], msg="Invalid output")
+		self.assertNotEqual(self.result3, [2,3,5,7,9], msg="Invalid output")
+
+	# #testing to see if it returns 9 as a prime number
+	def test_output_result4(self):
+		self.assertEqual(self.result4, [2,3,5,7,11,13,17,19], msg="Invalid output")
+
 
