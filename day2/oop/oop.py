@@ -1,23 +1,53 @@
-class BankAccount(object):
-    """ Manage different types of Bank Accounts """
+ class BankAccount(object):
 
-   def __init__(self, name, account_type, balance=0.0):
-        self.name = name
-        self.account_type = account_type
-        self.balance = balance
+    def _init_(self):
+        pass
 
-   def deposit(self, amount):
-        self.balance += amount
-        return self.balance
-
-
+    def withdraw():
+        pass
+    def deposit():
+        pass
 
 class SavingsAccount(BankAccount):
-    def __init__(self, name):
-        self.balance = 25000
-        self.account_type = "Savings Account"
 
+    def _init_(self):
+        self.balance = 500
+
+    def deposit(self, cashDeposit):
+        if (cashDeposit < 0):
+            return "Invalid deposit amount"
+        else:
+            self.balance += cashDeposit
+            return self.balance
+            
+    def withdraw(self, cashWithdraw):
+        if ((self.balance - cashWithdraw) > 0) and ((self.balance - cashWithdraw) < 500):
+            return "Cannot withdraw beyond the minimum account balance"
+        elif (self.balance - cashWithdraw) < 0:
+            return "Cannot withdraw beyond the current account balance"
+        elif cashWithdraw < 0:
+            return "Invalid withdraw amount"
+        else:
+            self.balance -= cashWithdraw
+            return self.balance 
 
 class CurrentAccount(BankAccount):
-    def __init__(self, name):
-        self.account_type = "Current Account"
+
+    def _init_(self):
+        self.balance = 0
+
+    def deposit(self, cashDeposit):
+        if cashDeposit < 0:
+            return "Invalid deposit amount"
+        else:
+            self.balance += cashDeposit
+            return self.balance
+
+    def withdraw(self, cashDeposit):
+        if cashDeposit < 0:
+            return "Invalid withdraw amount"
+        elif self.balance < cashDeposit:
+            return "Cannot withdraw beyond the current account balance"
+        else:
+            self.balance -= cashDeposit
+            return self.balance
