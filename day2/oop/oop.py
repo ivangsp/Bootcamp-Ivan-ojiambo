@@ -1,53 +1,60 @@
- class BankAccount(object):
+class BankAccount(object):
 
-    def _init_(self):
-        pass
+    def __init__(self):
+        self.balance = 0
 
-    def withdraw():
-        pass
-    def deposit():
-        pass
-
-class SavingsAccount(BankAccount):
-
-    def _init_(self):
-        self.balance = 500
-
-    def deposit(self, cashDeposit):
-        if (cashDeposit < 0):
+    def deposit(self, amount):
+        if amount < 0:
             return "Invalid deposit amount"
         else:
-            self.balance += cashDeposit
-            return self.balance
+            self.balance+=amount 
+            return self.balance   
+
+    # def withdraw(self, amount):
+    #     if amount < 0:
+    #         raise ValueError('Insufficient balance on account')
+
+    #     self.balance-=amount
+    #     if self.balance <0:
+    #        return "insufficient balance" 
+
+    #     else:
+    #         return self.balance
+ 
+class SavingsAccount(BankAccount):
+
+    def __init__(self):
+        self.balance = 5000
             
-    def withdraw(self, cashWithdraw):
-        if ((self.balance - cashWithdraw) > 0) and ((self.balance - cashWithdraw) < 500):
+    def withdraw(self, amount):
+        #self.balance = BankAccount.withdraw(amount)
+        self.balance-=amount
+        if self.balance < 500:
             return "Cannot withdraw beyond the minimum account balance"
-        elif (self.balance - cashWithdraw) < 0:
-            return "Cannot withdraw beyond the current account balance"
-        elif cashWithdraw < 0:
-            return "Invalid withdraw amount"
         else:
-            self.balance -= cashWithdraw
-            return self.balance 
+            return self.balance
 
 class CurrentAccount(BankAccount):
 
-    def _init_(self):
-        self.balance = 0
+    def __init__(self):
+        self.balance = 10000
 
-    def deposit(self, cashDeposit):
-        if cashDeposit < 0:
-            return "Invalid deposit amount"
+    def withdraw(self, amount):
+        
+        #self.balance = BankAccount.withdraw(amount)
+        self.balance -=amount
+        if self.balance < 10000:
+            return "Cannot withdraw beyond the min balance"
         else:
-            self.balance += cashDeposit
             return self.balance
 
-    def withdraw(self, cashDeposit):
-        if cashDeposit < 0:
-            return "Invalid withdraw amount"
-        elif self.balance < cashDeposit:
-            return "Cannot withdraw beyond the current account balance"
-        else:
-            self.balance -= cashDeposit
-            return self.balance
+saving_account  = SavingsAccount()
+current_account = CurrentAccount()
+
+print saving_account.deposit(20000)
+print saving_account.withdraw(30000)
+
+print current_account.deposit(10000)
+print current_account.withdraw(15000)
+
+        
