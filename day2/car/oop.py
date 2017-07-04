@@ -40,5 +40,3 @@ class Car(object):
 
 
 
-
-

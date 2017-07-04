@@ -17,6 +17,9 @@ def weather(city_name=None):
 
 def main():
 	city = raw_input("Please Enter the  CityName that u want to know its Weather:  ")
+	if city==None:
+		weather()
+
 	weather(city)
 		
 if __name__=='__main__':

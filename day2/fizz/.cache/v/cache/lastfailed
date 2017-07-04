@@ -1,0 +1,8 @@
+{
+  "test_fizz.py::FizzBuzzClassTest::test_buzz_1": true,
+  "test_fizz.py::FizzBuzzClassTest::test_buzz_2": true,
+  "test_fizz.py::FizzBuzzClassTest::test_fizz_1": true,
+  "test_fizz.py::FizzBuzzClassTest::test_fizz_2": true,
+  "test_fizz.py::FizzBuzzClassTest::test_fizz_buzz_1": true,
+  "test_fizz.py::FizzBuzzClassTest::test_fizz_buzz_2": true
+}

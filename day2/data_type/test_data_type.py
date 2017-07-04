@@ -1,12 +1,12 @@
 import unittest
-from data_type import data_type
+from data_types import data_type
 class DataTypeTestCase(unittest.TestCase):
 
   def test_none_type(self):
     self.assertEqual('no value', data_type(None))
 
   def test_array_type(self):
-    self.assertEqual(3, data_type([1, 2, 3]))
+    self.assertEqual(5, data_type([1, 2, 3,5]))
 
   def test_small_array_type(self):
     self.assertEqual(None, data_type([1, 2]))
